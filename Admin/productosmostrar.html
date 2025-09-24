@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mostrar Productos - Admin</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="admin-container">
+  <aside class="sidebar">
+    <h2>Panel Productos</h2>
+    <ul>
+      <li><a href="productosmostrar.html">Mostrar Productos</a></li>
+      <li><a href="crear-producto.html">Nuevo Producto</a></li>
+    </ul>
+  </aside>
+
+  <main class="admin-main">
+    <h1>Lista de Productos</h1>
+    <table id="tabla-productos">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Código</th>
+          <th>Nombre</th>
+          <th>Precio</th>
+          <th>Stock</th>
+          <th>Categoría</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Productos se renderizan aquí -->
+      </tbody>
+    </table>
+  </main>
+</div>
+
+<script src="../js/productos.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const tabla = document.getElementById('tabla-productos').querySelector('tbody');
+  
+  function renderizar() {
+    tabla.innerHTML = '';
+    productos.forEach(p => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>${p.id}</td>
+        <td>${p.codigo}</td>
+        <td>${p.nombre}</td>
+        <td>$${p.precio.toFixed(2)}</td>
+        <td>${p.stock}</td>
+        <td>${p.categoria}</td>
+        <td>
+          <button class="editar" data-id="${p.id}">Editar</button>
+          <button class="eliminar" data-id="${p.id}">Eliminar</button>
+        </td>
+      `;
+      tabla.appendChild(tr);
+    });
+
+    tabla.querySelectorAll('.editar').forEach(btn => {
+      btn.addEventListener('click', e => {
+        localStorage.setItem('editarProductoId', e.target.dataset.id);
+        window.location.href = 'productoseditar.html';
+      });
+    });
+
+    tabla.querySelectorAll('.eliminar').forEach(btn => {
+      btn.addEventListener('click', e => {
+        eliminarProducto(parseInt(e.target.dataset.id));
+        renderizar();
+      });
+    });
+  }
+
+  renderizar();
+});
+</script>
+</body>
+</html>

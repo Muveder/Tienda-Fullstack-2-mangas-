@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
- 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tienda Online - Home</title>
@@ -17,21 +16,20 @@
     <div class="logo">CRAZY DIAMOND</div>
     <nav class="main-nav">
       <a href="index.html">HOME</a>
-      <a href="productos.html">PRODUCTOS</a>
-      <a href="nosotros.html">NOSOTROS</a>
-      <a href="blogs.html">BLOGS</a>
-      <a href="contacto.html">CONTACTO</a>
+      <a href="pages/productos.html">PRODUCTOS</a>
+      <a href="pages/nosotros.html">NOSOTROS</a>
+      <a href="pages/blogs.html">BLOGS</a>
+      <a href="pages/contacto.html">CONTACTO</a>
     </nav>
     <div class="cart">
-      <a href="carrito.html">🛒 Cart (<span id="cart-count">0</span>)</a>
-    
+      <a href="pages/carrito.html">🛒 Cart (<span id="cart-count">0</span>)</a>
     </div>
   </header>
 
   <!-- Links superiores -->
   <div class="top-links">
-    <a href="login.html">INICIAR SESIÓN</a> |
-    <a href="registro.html">REGISTRAR USUARIO</a>
+    <a href="pages/login.html">INICIAR SESIÓN</a> |
+    <a href="pages/registro.html">REGISTRAR USUARIO</a>
   </div>
 
   <!-- Hero -->
@@ -40,7 +38,7 @@
       <h1>Mangas</h1>
       <p>Nuestros productos están disponibles para todo el país. </p>
       <p>¡Descubre ya nuestra colección!</p>
-      <a href="productos.html" class="btn">Ver productos</a>
+      <a href="pages/productos.html" class="btn">Ver productos</a>
     </div>
     <div class="rectangulo-img">
        <img src="assets/img/onepiece.jpg" alt="Producto destacado - One Piece">
@@ -49,88 +47,25 @@
 
   <!-- Productos destacados -->
   <section class="container">
-  <h2>Productos destacados</h2>
-  <div class="grid">
-    <article class="card prod1">
-  <div class="card-content">
-    <h3 class="title">Stone Ocean</h3>
-    <p class="attr">Precio</p>
-    <p class="price">$10.000</p>
-  </div>
-</article>
-
-<article class="card prod2">
-  <div class="card-content">
-    <h3 class="title">One piece: Zou</h3>
-    <p class="attr">Precio</p>
-    <p class="price">$12.000</p>
-  </div>
-</article>
-
-    <article class="card prod3">
-  <div class="card-content">
-    <h3 class="title">Boku no Hero Academia</h3>
-    <p class="attr">Precio</p>
-    <p class="price">$12.000</p>
-  </div>
-</article>
-
-    <article class="card prod4">
-  <div class="card-content">
-    <h3 class="title">20th Century Boys</h3>
-    <p class="attr">Precio</p>
-    <p class="price">$12.000</p>
-  </div>
-</article>
-
-    <article class="card prod5">
-  <div class="card-content">
-    <h3 class="title">Monster</h3>
-    <p class="attr">Precio</p>
-    <p class="price">$12.000</p>
-  </div>
-</article>
-
-    <article class="card prod6">
-  <div class="card-content">
-    <h3 class="title">Homunculus</h3>
-    <p class="attr">Precio</p>
-    <p class="price">$12.000</p>
-  </div>
-</article>
-
-    <article class="card prod7">
-  <div class="card-content">
-    <h3 class="title">Dragon Ball: Saga Freezer</h3>
-    <p class="attr">Precio</p>
-    <p class="price">$12.000</p>
-  </div>
-</article>
-
-    <article class="card prod8">
-  <div class="card-content">
-    <h3 class="title">Great Teacher Onizuka</h3>
-    <p class="attr">Precio</p>
-    <p class="price">$12.000</p>
-  </div>
-</article>
-  </div>
-</section>
+    <h2>Productos destacados</h2>
+    <div id="productos-destacados" class="grid">
+      <!-- Productos se insertan dinámicamente aquí -->
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer class="site-footer">
     <div class="footer-left">
       <p>CRAZY DIAMOND</p>
-     <h3>Contacto</h3>
-        <p>+56 9 0937 4594</p>
-    
-      </div>
+      <h3>Contacto</h3>
+      <p>+56 9 0937 4594</p>
+    </div>
     <div class="footer-center">
       <h3>Sobre nosotros</h3>
       <p>Somos una tienda especializada en la venta de mangas, ubicada en Paine. Nos dedicamos a traer los mejores títulos directamente hasta ti.</p>
     </div>
     <div class="footer-right">
-      <p>Suscribanse a nuestra página para futuras compras</p>
+      <p>Suscríbete para futuras compras</p>
       <form class="newsletter">
         <input type="email" placeholder="Enter email">
         <button type="submit">Suscribirse</button>
@@ -138,5 +73,8 @@
     </div>
   </footer>
 
+  <!-- Scripts -->
+  <script src="js/productos.js"></script>
+  <script src="js/home-productos.js"></script>
 </body>
 </html>
