@@ -1,6 +1,5 @@
 // js/carrito.js
 
-// Inicializar carrito desde localStorage o vacío
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 // Guardar carrito en localStorage
@@ -9,23 +8,29 @@ function guardarCarrito() {
     actualizarCartCount();
 }
 
-// Actualizar contador del carrito en el header
+// Actualizar contador en header
 function actualizarCartCount() {
     const cartCount = document.getElementById("cart-count");
     if (!cartCount) return;
-
     const totalItems = carrito.reduce((sum, item) => sum + (Number(item.cantidad) || 0), 0);
     cartCount.textContent = totalItems;
 }
 
 // Añadir producto al carrito
 function addToCart(producto, cantidad = 1) {
+    cantidad = Number(cantidad) || 1;
     const existente = carrito.find(item => item.id === producto.id);
 
     if (existente) {
-        existente.cantidad = Number(existente.cantidad) + Number(cantidad);
+        existente.cantidad = Number(existente.cantidad) + cantidad;
     } else {
-        carrito.push({ ...producto, cantidad: Number(cantidad) });
+        carrito.push({ 
+            id: producto.id,
+            nombre: producto.nombre,
+            precio: Number(producto.precio) || 0,
+            imagen: producto.imagen || 'assets/img/default.jpg',
+            cantidad
+        });
     }
 
     guardarCarrito();
@@ -52,7 +57,7 @@ function mostrarCarrito() {
         row.classList.add("carrito-item");
 
         row.innerHTML = `
-            <img src="${item.imagen || 'assets/img/default.jpg'}" alt="${item.nombre}" class="carrito-img">
+            <img src="${item.imagen}" alt="${item.nombre}" class="carrito-img">
             <div class="carrito-info">
                 <h4>${item.nombre}</h4>
                 <p>Precio: $${Number(item.precio).toFixed(2)}</p>
@@ -66,23 +71,18 @@ function mostrarCarrito() {
         contenedor.appendChild(row);
     });
 
-    // Eventos para cambiar cantidad
+    // Cambiar cantidad
     contenedor.querySelectorAll(".cantidad-input").forEach(input => {
         input.addEventListener("change", e => {
             const index = e.target.dataset.index;
             const nuevaCantidad = Number(e.target.value);
-            if (nuevaCantidad < 1) {
-                e.target.value = 1;
-                carrito[index].cantidad = 1;
-            } else {
-                carrito[index].cantidad = nuevaCantidad;
-            }
+            carrito[index].cantidad = nuevaCantidad > 0 ? nuevaCantidad : 1;
             guardarCarrito();
             mostrarCarrito();
         });
     });
 
-    // Eventos para eliminar producto
+    // Eliminar producto
     contenedor.querySelectorAll(".eliminar-btn").forEach(btn => {
         btn.addEventListener("click", e => {
             const index = e.target.dataset.index;
@@ -92,17 +92,17 @@ function mostrarCarrito() {
         });
     });
 
-    // Calcular total
+    // Calcular total seguro
     const total = carrito.reduce((sum, item) => {
         const precio = Number(item.precio) || 0;
-        const cantidad = Number(item.cantidad) || 0;
+        const cantidad = Number(item.cantidad) || 1;
         return sum + precio * cantidad;
     }, 0);
 
     totalElem.textContent = `$${total.toFixed(2)}`;
 }
 
-// Inicializar carrito y contador al cargar la página
+// Inicializar
 document.addEventListener("DOMContentLoaded", () => {
     mostrarCarrito();
     actualizarCartCount();
