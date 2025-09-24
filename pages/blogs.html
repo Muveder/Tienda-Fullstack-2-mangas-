@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs - CRAZY DIAMOND</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="logo">CRAZY DIAMOND</div>
+        <nav class="main-nav">
+            <a href="index.html">HOME</a>
+            <a href="productos.html">PRODUCTOS</a>
+            <a href="nosotros.html">NOSOTROS</a>
+            <a href="blogs.html">BLOGS</a>
+            <a href="contacto.html">CONTACTO</a>
+        </nav>
+        <div class="cart">
+            <a href="carrito.html" style="color: #000; text-decoration: none;">🛒 Cart (<span id="cart-count">0</span>)</a>
+        </div>
+    </header>
+
+    <div class="top-links">
+        <a href="login.html">INICIAR SESIÓN</a> |
+        <a href="registro.html">REGISTRAR USUARIO</a>
+    </div>
+
+    <main class="blogs-page">
+        <div class="blogs-container">
+            <h1>NOTICIAS IMPORTANTES</h1>
+            <h2>Historias reales de nuestros clientes satisfechos</h2>
+            
+            <div class="blog-grid">
+                <!-- Caso 1 -->
+                <article class="blog-card">
+                    <img src="assets/img/blog1.jpg" alt="Cliente satisfecho 1" class="blog-image">
+                    <div class="blog-content">
+                        <h3>CASO CURIOSO #1: La colección completa de JoJo's</h3>
+                        <p>María, una estudiante universitaria de Santiago, siempre soñó con tener la colección completa de JoJo's Bizarre Adventure. Después de buscar en varias tiendas sin éxito, encontró en CRAZY DIAMOND todos los volúmenes que necesitaba. "No podía creer que tuvieran hasta las ediciones especiales. El envío fue rápido y los mangas llegaron en perfecto estado. ¡Finalmente completé mi colección después de 2 años de búsqueda!"</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">Publicado: 15 Marzo 2024</span>
+                            <a href="#" class="blog-btn">VER CASO</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Caso 2 -->
+                <article class="blog-card">
+                    <img src="assets/img/blog2.jpg" alt="Cliente satisfecho 2" class="blog-image">
+                    <div class="blog-content">
+                        <h3>CASO CURIOSO #2: El regalo de cumpleaños perfecto</h3>
+                        <p>Carlos quería sorprender a su hermano menor con el volumen 100 de One Piece para su cumpleaños. "Vivo en Paine y no hay muchas tiendas de mangas por aquí. Encontré CRAZY DIAMOND por internet y aunque tenía dudas sobre comprar online, el proceso fue súper fácil. Mi hermano quedó fascinado con el regalo, y lo mejor es que la edición era exactamente la que buscaba. Definitivamente volveré a comprar aquí."</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">Publicado: 28 Febrero 2024</span>
+                            <a href="#" class="blog-btn">VER CASO</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Caso 3 -->
+                <article class="blog-card">
+                    <img src="assets/img/blog3.jpg" alt="Cliente satisfecho 3" class="blog-image">
+                    <div class="blog-content">
+                        <h3>CASO CURIOSO #3: De coleccionista novato a experto</h3>
+                        <p>Ana comenzó su colección de mangas hace apenas 6 meses. "Al principio no sabía por dónde empezar, pero el equipo de CRAZY DIAMOND me asesoró increíblemente bien. Me recomendaron series según mis gustos y hasta me alertaron sobre lanzamientos próximos. He comprado más de 30 volúmenes y todos han llegado perfectamente empacados. ¡Su servicio al cliente es excepcional!"</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">Publicado: 10 Enero 2024</span>
+                            <a href="#" class="blog-btn">VER CASO</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-left">
+            <p>CRAZY DIAMOND</p>
+            <nav>
+                <a href="#">Instagram</a> | 
+                <a href="#">X</a> | 
+                <a href="#">Facebook</a>
+            </nav>
+        </div>
+        <div class="footer-center">
+            <h3>Sobre nosotros</h3>
+            <p>Somos una tienda especializada en la venta de mangas, ubicada en Paine. Nos dedicamos a traer los mejores títulos directamente hasta ti.</p>
+        </div>
+        <div class="footer-right">
+            <p>Suscríbete a nuestra página para futuras compras</p>
+            <form class="newsletter">
+                <input type="email" placeholder="Ingresa tu email">
+                <button type="submit">Suscribirse</button>
+            </form>
+        </div>
+    </footer>
+
+    <script>
+        
+        let cartCount = 0;
+        document.getElementById('cart-count').textContent = cartCount;
+    </script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Tienda Online</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Estilos corregidos aquí también por si acaso */
+        .registration-page {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 2rem;
+            background: #BFBFBF;
+        }
+
+        .registration-page .card {
+            background: #fff;
+            padding: 2rem;
+            width: 100%;
+            max-width: 500px;
+            border: 1px solid #ddd;
+            position: relative;
+            z-index: 1000;
+        }
+
+        .registration-page input,
+        .registration-page select {
+            width: 100%;
+            padding: 0.7rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            font-family: "Montserrat", sans-serif;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="logo">CRAZY DIAMOND</div>
+        <nav class="main-nav">
+            <a href="index.html">HOME</a>
+            <a href="productos.html">PRODUCTOS</a>
+            <a href="nosotros.html">NOSOTROS</a>
+            <a href="blogs.html">BLOGS</a>
+            <a href="contacto.html">CONTACTO</a>
+        </nav>
+        <div class="cart">
+            <a href="carrito.html" style="color: #000; text-decoration: none;">🛒 Cart (<span id="cart-count">0</span>)</a>
+        </div>
+    </header>
+
+    <!-- Links superiores -->
+    
+
+    <main class="registration-page">
+        <form id="registration-form" class="card">
+            <h1>Registro de usuario</h1>
+            
+            <label for="full-name">NOMBRE COMPLETO</label>
+            <input type="text" id="full-name" name="full-name" required>
+            
+            <label for="email">CORREO</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="confirm-email">CONFIRMAR CORREO</label>
+            <input type="email" id="confirm-email" name="confirm-email" required>
+            
+            <label for="password">CONTRASEÑA</label>
+            <input type="password" id="password" name="password" required>
+            
+            <label for="confirm-password">CONFIRMAR CONTRASEÑA</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+            
+            <label for="phone">TELÉFONO (opcional)</label>
+            <input type="tel" id="phone" name="phone">
+            
+            <div class="form-row">
+                <div>
+                    <label for="region">REGIÓN</label>
+                    <select id="region" name="region" required>
+                        <option value="">Seleccione la región --</option>
+                        <option value="rm">Región Metropolitana de Santiago</option>
+                        <option value="araucania">Región de la Araucanía</option>
+                        <option value="valparaiso">Región de Valparaíso</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label for="comuna">COMUNA</label>
+                    <select id="comuna" name="comuna" required>
+                        <option value="">Seleccione la comuna --</option>
+                        <option value="santiago">Santiago</option>
+                        <option value="providencia">Providencia</option>
+                        <option value="las-condes">Las Condes</option>
+                    </select>
+                </div>
+            </div>
+            
+            <button type="submit">REGISTRAR</button>
+        </form>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-left">
+            <p>CRAZY DIAMOND</p>
+            <nav>
+                <a href="#">Instagram</a> | 
+                <a href="#">X</a> | 
+                <a href="#">Facebook</a>
+            </nav>
+            
+        </div>
+        <div class="footer-right">
+            <p>Suscríbete a nuestra página para futuras compras</p>
+            <form class="newsletter">
+                <input type="email" placeholder="Ingresa tu email">
+                <button type="submit">Suscribirse</button>
+            </form>
+        </div>
+    </footer>
+
+    <script>
+        // Validación básica del formulario
+        document.getElementById('registration-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const confirmEmail = document.getElementById('confirm-email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            
+            if (email !== confirmEmail) {
+                alert('Los correos electrónicos no coinciden');
+                return;
+            }
+            
+            if (password !== confirmPassword) {
+                alert('Las contraseñas no coinciden');
+                return;
+            }
+            
+            // Si todo está bien, puedes enviar el formulario
+            alert('Registro exitoso');
+            // Aquí iría el código para enviar los datos al servidor
+        });
+    </script>
+</body>
+</html>

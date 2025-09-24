@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Online - Productos</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="logo">CRAZY DIAMOND</div>
+        <nav class="main-nav">
+            <a href="index.html">HOME</a>
+            <a href="productos.html">PRODUCTOS</a>
+            <a href="nosotros.html">NOSOTROS</a>
+            <a href="blogs.html">BLOGS</a>
+            <a href="contacto.html">CONTACTO</a>
+        </nav>
+        <div class="cart">
+            <a href="carrito.html">🛒 Cart (<span id="cart-count">0</span>)</a>
+        </div>
+    </header>
+
+    <!-- Links superiores -->
+    <div class="top-links">
+        <a href="login.html">INICIAR SESIÓN</a> |
+        <a href="registro.html">REGISTRAR USUARIO</a>
+    </div>
+
+    <!-- Contenido principal -->
+    <main class="container">
+        <h1>PRODUCTOS</h1>
+        
+        <!-- Grid de productos -->
+        <div class="product-grid">
+            <!-- Producto 1 -->
+            <div class="product-card">
+                <img src="assets/img/Stone.jpg" alt="Stone Ocean" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Stone Ocean</h3>
+                    <p class="product-price">$10.000</p>
+                    <button class="btn-add">Añadir al carrito</button>
+                </div>
+            </div>
+            
+            <!-- Producto 2 -->
+            <div class="product-card">
+                <img src="assets/img/op2.jpg" alt="One Piece: Zou" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">One Piece: Zou</h3>
+                    <p class="product-price">$12.000</p>
+                    <button class="btn-add">Añadir al carrito</button>
+                </div>
+            </div>
+            
+            <!-- Producto 3 -->
+            <div class="product-card">
+                <img src="assets/img/bnh.jpg" alt="Boku no Hero Academia" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Boku no Hero Academia</h3>
+                    <p class="product-price">$12.000</p>
+                    <button class="btn-add">Añadir al carrito</button>
+                </div>
+            </div>
+            
+            <!-- Producto 4 -->
+            <div class="product-card">
+                <img src="assets/img/20.jpg" alt="20th Century Boys" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">20th Century Boys</h3>
+                    <p class="product-price">$12.000</p>
+                    <button class="btn-add">Añadir al carrito</button>
+                </div>
+            </div>
+            
+            <!-- Producto 5 -->
+            <div class="product-card">
+                <img src="assets/img/Monster.jpg" alt="Monster" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Monster</h3>
+                    <p class="product-price">$12.000</p>
+                    <button class="btn-add">Añadir al carrito</button>
+                </div>
+            </div>
+            
+            <!-- Producto 6 -->
+            <div class="product-card">
+                <img src="assets/img/homunculus.jpg" alt="Homunculus" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Homunculus</h3>
+                    <p class="product-price">$12.000</p>
+                    <button class="btn-add">Añadir al carrito</button>
+                </div>
+            </div>
+            
+            <!-- Producto 7 -->
+            <div class="product-card">
+                <img src="assets/img/DB.jpg" alt="Dragon Ball: Saga Freezer" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Dragon Ball: Saga Freezer</h3>
+                    <p class="product-price">$12.000</p>
+                    <button class="btn-add">Añadir al carrito</button>
+                </div>
+            </div>
+            
+            <!-- Producto 8 -->
+            <div class="product-card">
+                <img src="assets/img/GTO.jpg" alt="Great Teacher Onizuka" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Great Teacher Onizuka</h3>
+                    <p class="product-price">$12.000</p>
+                    <button class="btn-add">Añadir al carrito</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-left">
+            <p>CRAZY DIAMOND</p>
+            <nav>
+                <a href="#">Instagram</a> | 
+                <a href="#">X</a> | 
+                <a href="#">Facebook</a>
+            </nav>
+            <div class="payments">
+                <img src="assets/icons/visa.png" alt="Visa">
+                <img src="assets/icons/mastercard.png" alt="Mastercard">
+                <img src="assets/icons/amex.png" alt="Amex">
+            </div>
+        </div>
+        <div class="footer-right">
+            <p>¡Mantente informado! Suscríbete a nuestro boletín.</p>
+            <form class="newsletter">
+                <input type="email" placeholder="Ingresa tu email">
+                <button type="submit">Suscribirse</button>
+            </form>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript para la funcionalidad del carrito
+        document.addEventListener('DOMContentLoaded', function() {
+            const addButtons = document.querySelectorAll('.btn-add');
+            const cartCount = document.getElementById('cart-count');
+            let count = 0;
+            
+            addButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    count++;
+                    cartCount.textContent = count;
+                    
+                    // Efecto visual
+                    const originalText = this.textContent;
+                    this.textContent = '✓ Añadido';
+                    this.style.background = '#4CAF50';
+                    
+                    setTimeout(() => {
+                        this.textContent = originalText;
+                        this.style.background = '#732F61';
+                    }, 1500);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
