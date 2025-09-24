@@ -3,42 +3,71 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nombre de la página</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <title>Carrito - CRAZY DIAMOND</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/carrito.css">
 </head>
 <body>
+  <!-- HEADER -->
   <header class="site-header">
-    <div class="logo">
-      <a href="../index.html">Tienda</a>
-    </div>
+    <div class="logo">CRAZY DIAMOND</div>
     <nav class="main-nav">
-      <a href="../index.html">Home</a>
-      <a href="productos.html">Productos</a>
-      <a href="blogs.html">Blogs</a>
-      <a href="nosotros.html">Nosotros</a>
-      <a href="contacto.html">Contacto</a>
-      <a href="carrito.html">Carrito 🛒</a>
-      <a href="login.html">Login</a>
-      <a href="registro.html">Registro</a>
+      <a href="../index.html">HOME</a>
+      <a href="productos.html">PRODUCTOS</a>
+      <a href="nosotros.html">NOSOTROS</a>
+      <a href="blogs.html">BLOGS</a>
+      <a href="contacto.html">CONTACTO</a>
+      <a href="carrito.html">CARRITO 🛒</a>
+      <a href="login.html">LOGIN</a>
     </nav>
   </header>
 
-  <main class="container">
-  <h1>Carrito</h1>
-  <table class="cart-table">
-    <thead>
-      <tr><th>Producto</th><th>Cantidad</th><th>Precio</th><th>Total</th></tr>
-    </thead>
-    <tbody id="cart-body"></tbody>
-  </table>
-  <p id="cart-total">Total: $0</p>
-</main>
+  <!-- MAIN -->
+  <main class="carrito-main container">
+    <!-- IZQUIERDA: productos -->
+    <section class="carrito-left">
+      <h2>Mi carrito de compras 🛒</h2>
+      <div id="carrito-contenedor">
+        <!-- JS cargará los productos aquí -->
+      </div>
+    </section>
 
+    <!-- DERECHA: resumen total -->
+    <aside class="carrito-right">
+      <div class="resumen">
+        <h3>Total: <span id="carrito-total">$0</span></h3>
+        <div class="cupon">
+          <input type="text" placeholder="Ingrese cupón de descuento">
+          <button class="btn-aplicar">Aplicar</button>
+        </div>
+        <button class="btn-pagar">Pagar</button>
+      </div>
+    </aside>
+  </main>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
-    <p>© 2025 Tienda Online</p>
+    <div class="footer-left">
+      <p>CRAZY DIAMOND</p>
+      <nav>
+        <a href="#">Instagram</a> | 
+        <a href="#">X</a> | 
+        <a href="#">Facebook</a>
+      </nav>
+    </div>
+    <div class="footer-right">
+      <p>¡Mantente informado! Suscríbete a nuestro boletín.</p>
+      <form class="newsletter">
+        <input type="email" placeholder="Ingresa tu email" required>
+        <button type="submit">Suscribirse</button>
+      </form>
+    </div>
   </footer>
 
-  <script src="js/app.js"></script>
+  <!-- Scripts -->
+  <script src="../js/carrito.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", mostrarCarrito);
+  </script>
 </body>
 </html>
