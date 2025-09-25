@@ -1,10 +1,21 @@
-// js/users-init.js
+// js/iniciador-de-usuarios.js
 
 document.addEventListener("DOMContentLoaded", () => {
-  if (!localStorage.getItem("users")) {
+  if (!localStorage.getItem("usuarios")) {
     const defaultUsers = [
-      { email: "admin@admin.com", password: "1234", role: "admin" }
+      {
+        correo: "administrador@gmail.com",
+        password: "1234",
+        tipoUsuario: "admin",
+        nombre: "Administrador",
+        apellidos: "",
+        fechaNacimiento: "",
+        region: "",
+        comuna: "",
+        direccion: ""
+      }
     ];
-    localStorage.setItem("users", JSON.stringify(defaultUsers));
+    localStorage.setItem("usuarios", JSON.stringify(defaultUsers));
+    console.log("Usuario por defecto creado");
   }
 });
