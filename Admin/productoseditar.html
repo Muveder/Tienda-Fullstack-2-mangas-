@@ -49,6 +49,7 @@
       <input type="file" id="imagen" name="imagen" accept="image/*">
 
       <button type="submit">Guardar Cambios</button>
+      <button type="button" onclick="window.location.href='productosmostrar.html'">⬅️ Volver</button>
     </form>
   </main>
 </div>
@@ -66,7 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
-  // Rellenar formulario con datos existentes
   formEditar.codigo.value = producto.codigo;
   formEditar.nombre.value = producto.nombre;
   formEditar.descripcion.value = producto.descripcion || '';
@@ -77,7 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   formEditar.addEventListener('submit', e => {
     e.preventDefault();
-
     const datos = {
       codigo: formEditar.codigo.value.trim(),
       nombre: formEditar.nombre.value.trim(),
@@ -87,7 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
       stockCritico: parseInt(formEditar.stockCritico.value) || null,
       categoria: formEditar.categoria.value
     };
-
     const archivo = formEditar.imagen.files[0];
     if (archivo) {
       const reader = new FileReader();

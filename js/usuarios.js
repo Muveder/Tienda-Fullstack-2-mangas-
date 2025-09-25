@@ -1,10 +1,52 @@
 // js/usuarios.js
 
-document.addEventListener("DOMContentLoaded", () => {
+// ----------------------
+// INICIALIZACIÓN
+// ----------------------
 
-  // ----------------------
-  // CREAR USUARIO
-  // ----------------------
+// Array de usuarios desde localStorage
+let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+// Función para guardar usuarios en localStorage
+function guardarUsuarios() {
+  localStorage.setItem("usuarios", JSON.stringify(usuarios));
+}
+
+// Obtener usuario por id
+function obtenerUsuario(id) {
+  return usuarios.find(u => u.id === id);
+}
+
+// Eliminar usuario por id
+function eliminarUsuario(id) {
+  usuarios = usuarios.filter(u => u.id !== id);
+  guardarUsuarios();
+}
+
+// Generar ID único
+function generarIdUsuario() {
+  return usuarios.length > 0 ? Math.max(...usuarios.map(u => u.id)) + 1 : 1;
+}
+
+// ----------------------
+// VALIDACIONES
+// ----------------------
+function validarRun(run) {
+  if (!run) return false;
+  run = run.toUpperCase();
+  return /^[0-9]{7,8}[0-9K]$/.test(run);
+}
+
+function validarCorreo(correo) {
+  if (!correo || correo.length > 100) return false;
+  const patron = /@duoc\.cl$|@profesor\.duoc\.cl$|@gmail\.com$/;
+  return patron.test(correo);
+}
+
+// ----------------------
+// CREAR USUARIO
+// ----------------------
+document.addEventListener("DOMContentLoaded", () => {
   const formCrear = document.getElementById("form-nuevo-usuario");
   if (formCrear) {
     const selectRegion = document.getElementById("region");
@@ -38,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
       selectComuna.innerHTML = "";
     });
 
-    // Manejar envío
+    // Manejar envío del formulario
     formCrear.addEventListener("submit", e => {
       e.preventDefault();
 
@@ -53,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const direccion = formCrear.direccion.value.trim();
 
       // Validaciones
-      if (!validarRun(run)) return alert("RUN inválido. Ej: 19011022K, 7 a 9 caracteres, sin puntos ni guión.");
+      if (!validarRun(run)) return alert("RUN inválido. Ej: 19011022K");
       if (!nombre || nombre.length > 50) return alert("Nombre inválido (máx. 50 caracteres)");
       if (!apellidos || apellidos.length > 100) return alert("Apellidos inválidos (máx. 100 caracteres)");
       if (!validarCorreo(correo)) return alert("Correo inválido. Solo @duoc.cl, @profesor.duoc.cl, @gmail.com");
@@ -77,6 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
       guardarUsuarios();
       alert("✅ Usuario agregado correctamente!");
       formCrear.reset();
+      selectComuna.innerHTML = "";
     });
   }
 
@@ -106,12 +149,14 @@ document.addEventListener("DOMContentLoaded", () => {
     function cargarComunas(region) {
       const r = regiones.find(reg => reg.nombre === region);
       formEditar.comuna.innerHTML = "";
-      if (r) r.comunas.forEach(c => {
-        const option = document.createElement("option");
-        option.value = c;
-        option.textContent = c;
-        formEditar.comuna.appendChild(option);
-      });
+      if (r) {
+        r.comunas.forEach(c => {
+          const option = document.createElement("option");
+          option.value = c;
+          option.textContent = c;
+          formEditar.comuna.appendChild(option);
+        });
+      }
     }
 
     // Rellenar formulario
@@ -128,7 +173,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     formEditar.region.addEventListener("change", () => cargarComunas(formEditar.region.value));
 
-    // Guardar cambios
     formEditar.addEventListener("submit", e => {
       e.preventDefault();
 
@@ -152,6 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
       Object.assign(usuario, { run, nombre, apellidos, correo, fechaNacimiento, tipoUsuario, region, comuna, direccion });
       guardarUsuarios();
       alert("✅ Usuario editado correctamente!");
+      localStorage.removeItem("editarUsuarioId");
       window.location.href = "usuariosmostrar.html";
     });
   }
@@ -210,18 +255,3 @@ document.addEventListener("DOMContentLoaded", () => {
     renderizar();
   }
 });
-
-// ----------------------
-// FUNCIONES DE VALIDACIÓN
-// ----------------------
-function validarRun(run) {
-  if (!run) return false;
-  run = run.toUpperCase();
-  return /^[0-9]{7,8}[0-9K]$/.test(run);
-}
-
-function validarCorreo(correo) {
-  if (!correo || correo.length > 100) return false;
-  const patron = /@duoc\.cl$|@profesor\.duoc\.cl$|@gmail\.com$/;
-  return patron.test(correo);
-}
