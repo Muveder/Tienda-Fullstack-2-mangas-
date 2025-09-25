@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuevo Usuario - Admin</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="admin-container">
+    <aside class="sidebar">
+      <h2>Panel Usuarios</h2>
+      <ul>
+        <li><a href="usuariosmostrar.html">Mostrar Usuarios</a></li>
+        <li><a href="usuarioscrear.html" class="active">Nuevo Usuario</a></li>
+        <li><a href="usuarioeditar.html">Editar Usuarios</a></li>
+      </ul>
+    </aside>
+
+    <main class="admin-main">
+      <h1>Agregar Nuevo Usuario</h1>
+      <form id="form-nuevo-usuario">
+
+        <label for="run">RUN</label>
+        <input type="text" id="run" name="run" maxlength="9" required placeholder="Ej: 19011022K">
+
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" maxlength="50" required>
+
+        <label for="apellidos">Apellidos</label>
+        <input type="text" id="apellidos" name="apellidos" maxlength="100" required>
+
+        <label for="correo">Correo</label>
+        <input type="email" id="correo" name="correo" maxlength="100" required>
+
+        <label for="fechaNacimiento">Fecha de Nacimiento</label>
+        <input type="date" id="fechaNacimiento" name="fechaNacimiento">
+
+        <label for="tipoUsuario">Tipo de Usuario</label>
+        <select id="tipoUsuario" name="tipoUsuario" required>
+          <option value="administrador">Administrador</option>
+          <option value="cliente">Cliente</option>
+          <option value="vendedor">Vendedor</option>
+        </select>
+
+        <label for="region">Región</label>
+        <select id="region" name="region" required>
+          <option value="" disabled selected>Seleccione una región</option>
+        </select>
+
+        <label for="comuna">Comuna</label>
+        <select id="comuna" name="comuna" required>
+          <option value="" disabled selected>Seleccione una comuna</option>
+        </select>
+
+        <label for="direccion">Dirección</label>
+        <input type="text" id="direccion" name="direccion" maxlength="300" required>
+
+        <button type="submit">Agregar Usuario</button>
+      </form>
+    </main>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../js/comunasyregiones.js"></script>
+  <script src="../js/usuarios.js"></script>
+</body>
+</html>

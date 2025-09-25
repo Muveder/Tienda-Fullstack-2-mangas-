@@ -1,79 +1,83 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Tienda Online</title>
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - CRAZY DIAMOND</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
 </head>
 <body>
-    <header class="site-header">
-        <div class="logo">CRAZY DIAMOND</div>
-        <nav class="main-nav">
-            <a href="../index.html">HOME</a>
-            <a href="productos.html">PRODUCTOS</a>
-            <a href="nosotros.html">NOSOTROS</a>
-            <a href="blogs.html">BLOGS</a>
-            <a href="contacto.html">CONTACTO</a>
-        </nav>
-        <div class="cart">
-            <a href="carrito.html" style="color: #000; text-decoration: none;">🛒 Cart (<span id="cart-count">0</span>)</a>
-        </div>
-    </header>
-
-    <div class="top-links">
-        <a href="login.html">INICIAR SESIÓN</a> |
-        <a href="registro.html">REGISTRAR USUARIO</a>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="logo">CRAZY DIAMOND</div>
+    <nav class="main-nav">
+      <a href="../index.html">HOME</a>
+      <a href="productos.html">PRODUCTOS</a>
+      <a href="nosotros.html">NOSOTROS</a>
+      <a href="blogs.html">BLOGS</a>
+      <a href="contacto.html">CONTACTO</a>
+      <a href="login.html">LOGIN</a>
+      <a href="registro.html">REGISTRO</a>
+    </nav>
+    <div class="cart">
+      <a href="carrito.html" style="color: #000; text-decoration: none">
+        🛒 Cart (<span id="cart-count">0</span>)
+      </a>
     </div>
+  </header>
 
-    <main class="login-page">
-        <div class="login-card">
-            <h1>CRAZY DIAMOND</h1>
-            <form class="login-form">
-                <div class="form-group">
-                    <label for="login-email">CORREO</label>
-                    <input type="email" id="login-email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="login-password">CONTRASEÑA</label>
-                    <input type="password" id="login-password" name="password" required>
-                </div>
-                <button type="submit" class="login-btn">INICIAR SESIÓN</button>
-            </form>
-        </div>
-    </main>
+  <!-- LINKS RAPIDOS -->
+  <div class="top-links">
+    <a href="login.html">INICIAR SESIÓN</a> |
+    <a href="registro.html">REGISTRAR USUARIO</a>
+  </div>
 
-    <footer class="site-footer">
-        <div class="footer-left">
-            <p>CRAZY DIAMOND</p>
-            <nav>
-                <a href="#">Instagram</a> | 
-                <a href="#">X</a> | 
-                <a href="#">Facebook</a>
-            </nav>
+  <!-- MAIN -->
+  <main class="login-page">
+    <div class="login-card">
+      <h1>CRAZY DIAMOND</h1>
+      <form id="form-login" class="login-form">
+        <div class="form-group">
+          <label for="correo">CORREO</label>
+          <input type="email" id="correo" name="correo" required />
         </div>
-        <div class="footer-center">
-            <h3>Sobre nosotros</h3>
-            <p>Somos una tienda especializada en la venta de mangas, ubicada en Paine. Nos dedicamos a traer los mejores títulos directamente hasta ti.</p>
+        <div class="form-group">
+          <label for="contrasena">CONTRASEÑA</label>
+          <input type="password" id="contrasena" name="contrasena" required />
         </div>
-        <div class="footer-right">
-            <p>Suscríbete a nuestra página para futuras compras</p>
-            <form class="newsletter">
-                <input type="email" placeholder="Ingresa tu email">
-                <button type="submit">Suscribirse</button>
-            </form>
-        </div>
-    </footer>
+        <button type="submit" class="login-btn">INICIAR SESIÓN</button>
+      </form>
+    </div>
+  </main>
 
-    <script>
-        document.querySelector('.login-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Aquí iría la lógica de autenticación
-            alert('Iniciando sesión...');
-        });
-    </script>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-left">
+      <p>CRAZY DIAMOND</p>
+      <nav>
+        <a href="#">Instagram</a> | <a href="#">X</a> | <a href="#">Facebook</a>
+      </nav>
+    </div>
+    <div class="footer-center">
+      <h3>Sobre nosotros</h3>
+      <p>
+        Somos una tienda especializada en la venta de mangas, ubicada en Paine. 
+        Nos dedicamos a traer los mejores títulos directamente hasta ti.
+      </p>
+    </div>
+    <div class="footer-right">
+      <p>Suscríbete a nuestra página para futuras compras</p>
+      <form class="newsletter">
+        <input type="email" placeholder="Ingresa tu email" />
+        <button type="submit">Suscribirse</button>
+      </form>
+    </div>
+  </footer>
+
+  <!-- SCRIPT LOGIN -->
+  <script src="js/login.js"></script>
 </body>
 </html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mostrar Usuarios - Admin</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="admin-container">
+    <aside class="sidebar">
+      <h2>Panel Usuarios</h2>
+      <ul>
+        <li><a href="usuariosmostrar.html" class="active">Mostrar Usuarios</a></li>
+        <li><a href="usuarioscrear.html">Nuevo Usuario</a></li>
+        <li><a href="usuarioeditar.html">Editar Usuarios</a></li>
+      </ul>
+    </aside>
+
+    <main class="admin-main">
+      <h1>Mostrar Usuarios</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>RUN</th>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Rol</th>
+            <th>Región / Comuna</th>
+            <th>Dirección</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-usuarios">
+          <!-- Usuarios se llenan dinámicamente con JS -->
+        </tbody>
+      </table>
+    </main>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../js/usuarios.js"></script>
+</body>
+</html>
