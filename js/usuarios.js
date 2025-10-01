@@ -1,10 +1,4 @@
-// js/usuarios.js
 
-// ----------------------
-// INICIALIZACIÓN
-// ----------------------
-
-// Array de usuarios desde localStorage
 let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
 // Función para guardar usuarios en localStorage

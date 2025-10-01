@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function mostrarDestacados() {
 
     grid.innerHTML = '';
 
-    // Mostrar solo los primeros 4 productos como destacados
+   
     productos.slice(0, 4).forEach(producto => {
         const card = document.createElement('div');
         card.classList.add('product-card');

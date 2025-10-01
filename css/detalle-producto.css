@@ -1,0 +1,183 @@
+/* ----------------- FUENTE ----------------- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: #f5f5f5;
+  color: #111;
+  line-height: 1.6;
+}
+
+/* ----------------- HEADER ----------------- */
+.site-header {
+  background: #732F61;
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-header .logo a {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.site-header .main-nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.site-header .main-nav a:hover {
+  color: #f0c040;
+}
+
+/* ----------------- DETALLE PRODUCTO ----------------- */
+.container.product-detail {
+  max-width: 1200px;
+  margin: 2rem auto;
+  display: flex;
+  gap: 2rem;
+  padding: 0 1rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.detail-left,
+.detail-right {
+  flex: 1;
+}
+
+.detail-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.detail-left .detail-img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.detail-right h1 {
+  font-size: 2rem;
+  color: #732F61;
+  margin-bottom: 1rem;
+}
+
+.detail-right .price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #B7209A;
+  margin-bottom: 1rem;
+}
+
+.detail-right p {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+.detail-right .btn {
+  background: #732F61;
+  color: #fff;
+  border: none;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.detail-right .btn:hover {
+  background: #400101;
+  transform: scale(1.05);
+}
+
+/* ----------------- FOOTER ----------------- */
+.site-footer {
+  background: #732F61;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 2rem;
+  margin-top: 3rem;
+  gap: 2rem;
+}
+
+.site-footer a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.site-footer a:hover {
+  color: #f0c040;
+}
+
+.site-footer .payments img {
+  width: 50px;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+.site-footer .newsletter {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.site-footer .newsletter input {
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+  border: none;
+  flex: 1;
+  font-size: 1rem;
+}
+
+.site-footer .newsletter button {
+  padding: 0.6rem 1rem;
+  background: #B7209A;
+  border: none;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.site-footer .newsletter button:hover {
+  background: #400101;
+}
+
+/* ----------------- RESPONSIVE ----------------- */
+@media (max-width: 900px) {
+  .container.product-detail {
+    flex-direction: column;
+  }
+
+  .detail-left,
+  .detail-right {
+    width: 100%;
+  }
+
+  .detail-left .detail-img {
+    max-width: 100%;
+  }
+}

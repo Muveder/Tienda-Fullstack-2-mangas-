@@ -1,0 +1,109 @@
+/* ----------------- FUENTE ----------------- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+/* ----------------- RESET ----------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ----------------- GENERALES ----------------- */
+body {
+  font-family: "Montserrat", sans-serif;
+  background: #BFBFBF;
+  color: #111;
+  line-height: 1.6;
+}
+
+/* ----------------- CONTAINER ----------------- */
+.admin-container {
+  display: flex;      /* sidebar y main lado a lado */
+  min-height: 100vh;  /* ocupa toda la altura de la pantalla */
+}
+
+/* ----------------- SIDEBAR ----------------- */
+.sidebar {
+  width: 220px;
+  background: #732F61;
+  color: #BFBFBF;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sidebar h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  margin-bottom: 1rem;
+}
+
+.sidebar ul li a {
+  color: #BFBFBF;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease, background 0.3s ease;
+  padding: 0.4rem 0.6rem;
+  display: block;
+  border-radius: 6px;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
+  background: #400101;
+  color: #fff;
+}
+
+/* ----------------- MAIN ----------------- */
+.admin-main {
+  flex: 1; /* ocupa todo el espacio a la derecha */
+  background: #fff;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.admin-main h1 {
+  color: #732F61;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.admin-main p {
+  text-align: center;
+  font-size: 1rem;
+  color: #262526;
+}
+
+/* ----------------- RESPONSIVE ----------------- */
+@media (max-width: 900px) {
+  .admin-container {
+    flex-direction: column; /* sidebar arriba, main abajo */
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 1rem;
+  }
+
+  .sidebar h2 {
+    display: none;
+  }
+
+  .admin-main {
+    padding: 2rem 1rem;
+  }
+}

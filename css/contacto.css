@@ -1,0 +1,159 @@
+/* ----------------- IMPORTAR FUENTE ----------------- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+/* ----------------- RESET ----------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ----------------- GENERALES ----------------- */
+body {
+  font-family: "Montserrat", sans-serif;
+  background: #BFBFBF;
+  color: #111;
+  line-height: 1.6;
+}
+
+h1 {
+  font-weight: 800;
+  color: #732F61;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* ----------------- HEADER ----------------- */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  padding: 1rem 2rem;
+  background-image: url('weatherreport.png'); /* ajusta ruta */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.logo a {
+  font-size: 26px;
+  font-weight: 800;
+  color: #400101;
+  text-decoration: none;
+}
+
+.main-nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.main-nav a {
+  font-weight: 600;
+  font-size: 13px;
+  color: #000;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+  color: #732F61;
+}
+
+/* ----------------- FORM ----------------- */
+.form-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1rem;
+}
+
+.card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+}
+
+.card label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #262526;
+}
+
+.card input,
+.card textarea {
+  margin-top: 0.5rem;
+  padding: 0.8rem;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card input:focus,
+.card textarea:focus {
+  border-color: #732F61;
+  box-shadow: 0 0 5px rgba(115,47,97,0.5);
+  outline: none;
+}
+
+.card textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.card button {
+  background: #732F61;
+  color: #fff;
+  border: 2px solid white;
+  padding: 0.8rem 1rem;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+  margin-top: 1rem;
+}
+
+.card button:hover {
+  background: #400101;
+  transform: scale(1.05);
+}
+
+/* ----------------- FOOTER ----------------- */
+.site-footer {
+  text-align: center;
+  padding: 2rem;
+  background: #732F61;
+  color: #BFBFBF;
+  margin-top: 50px;
+  font-size: 14px;
+}
+
+/* ----------------- RESPONSIVE ----------------- */
+@media (max-width: 600px) {
+  .site-header {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+    gap: 10px;
+  }
+
+  .main-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+}

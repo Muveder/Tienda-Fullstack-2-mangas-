@@ -35,9 +35,6 @@ function validarCorreo(correo) {
   return patron.test(correo);
 }
 
-// ----------------------
-// Productos (para carrito y admin)
-// ----------------------
 let productos = JSON.parse(localStorage.getItem('productos')) || [];
 
 function guardarProductos() {

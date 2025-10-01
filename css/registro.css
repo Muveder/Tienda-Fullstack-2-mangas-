@@ -1,4 +1,49 @@
+/* Importar Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background: #BFBFBF;
+  color: #111;
+}
+
+/* Header */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 800;
+  height: 100px;
+  padding: 1rem 2rem;
+  background-image: url('weatherreport.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.site-header .main-nav a {
+  margin: 0 1rem;
+  color: #000;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.site-header .cart {
+  font-weight: 700;
+}
+
+/* Contenedor del registro */
 .container {
   max-width: 500px;
   margin: 3rem auto;
@@ -8,7 +53,7 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-/* Título de la página */
+/* Título */
 .container h1 {
   font-size: 2rem;
   font-weight: 800;
@@ -76,70 +121,66 @@
 .site-footer {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
   align-items: flex-start;
-  padding: 2rem;
+  padding: 3rem 2rem;
   background: #732F61;
+}
+
+.footer-left, .footer-center, .footer-right {
+  flex: 1;
   color: #BFBFBF;
 }
 
-.footer-left,
-.footer-right {
-  flex: 1;
-  margin-bottom: 1rem;
+.footer-left {
+  text-align: left;
 }
 
-.footer-left nav a,
-.footer-right input,
-.footer-right button {
-  font-family: "Montserrat", sans-serif;
+.footer-center {
+  text-align: center;
+}
+
+.footer-right {
+  text-align: right;
+}
+
+.footer-right p {
+  margin-bottom: 20px;
+}
+
+.footer-left p, .footer-center h3, .footer-center p, .footer-right p {
+  color: #BFBFBF;
+}
+
+.footer-center h3 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.footer-center p {
+  line-height: 1.5;
+  max-width: 300px;
+  margin: 0 auto;
 }
 
 .footer-left nav a {
+  margin-right: 0.5rem;
   color: #BFBFBF;
   text-decoration: none;
-  margin-right: 0.5rem;
   font-weight: 500;
 }
 
-.footer-right input {
+.newsletter input {
   padding: 0.4rem;
   margin-right: 0.5rem;
-  border-radius: 4px;
-  border: none;
+  font-family: "Montserrat", sans-serif;
 }
 
-.footer-right button {
+.newsletter button {
   background: #262526;
   color: #fff;
-  padding: 0.5rem 1rem;
   border: none;
+  padding: 0.5rem 1rem;
+  font-family: "Montserrat", sans-serif;
   font-weight: 600;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.3s ease;
-}
-
-.footer-right button:hover {
-  background: #400101;
-  transform: scale(1.05);
-}
-
-/* Header ajuste si necesario */
-.site-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-image: url('../assets/img/weatherreport.png');
-  background-size: cover;
-  background-position: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.site-header .main-nav a {
-  margin: 0 1rem;
-  color: #000;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 12px;
 }

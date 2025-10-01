@@ -1,0 +1,155 @@
+/* ----------------- FUENTE ----------------- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+/* ----------------- RESET ----------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ----------------- CONTAINER ----------------- */
+.admin-container {
+  display: flex;      /* sidebar y main lado a lado */
+  min-height: 100vh;  /* ocupa toda la altura */
+  background: #BFBFBF;
+}
+
+/* ----------------- SIDEBAR ----------------- */
+.sidebar {
+  width: 220px;
+  background: #732F61;
+  color: #BFBFBF;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sidebar h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  margin-bottom: 1rem;
+}
+
+.sidebar ul li a {
+  color: #BFBFBF;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease, background 0.3s ease;
+  padding: 0.4rem 0.6rem;
+  display: block;
+  border-radius: 6px;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
+  background: #400101;
+  color: #fff;
+}
+
+/* ----------------- MAIN ----------------- */
+.admin-main {
+  flex: 1; /* ocupa todo el espacio a la derecha */
+  background: #fff;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.admin-main h1 {
+  color: #732F61;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+/* ----------------- FORMULARIO ----------------- */
+.admin-main form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  background: #f5f5f5;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.admin-main label {
+  font-weight: 600;
+  color: #262526;
+}
+
+.admin-main input,
+.admin-main select,
+.admin-main textarea {
+  padding: 0.8rem;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.admin-main input:focus,
+.admin-main select:focus,
+.admin-main textarea:focus {
+  border-color: #732F61;
+  box-shadow: 0 0 5px rgba(115,47,97,0.5);
+  outline: none;
+}
+
+.admin-main button {
+  background: #732F61;
+  color: #fff;
+  border: 2px solid white;
+  padding: 0.8rem 1rem;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+  margin-top: 1rem;
+}
+
+.admin-main button:hover {
+  background: #400101;
+  transform: scale(1.05);
+}
+
+/* ----------------- RESPONSIVE ----------------- */
+@media (max-width: 900px) {
+  .admin-container {
+    flex-direction: column; /* sidebar arriba, main abajo */
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 1rem;
+  }
+
+  .sidebar h2 {
+    display: none;
+  }
+
+  .admin-main {
+    padding: 2rem 1rem;
+  }
+
+  .admin-main form {
+    padding: 1.5rem;
+  }
+}

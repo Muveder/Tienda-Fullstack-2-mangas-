@@ -1,0 +1,174 @@
+/* ----------------- FUENTE ----------------- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+/* ----------------- RESET ----------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ----------------- GENERALES ----------------- */
+body {
+  font-family: "Montserrat", sans-serif;
+  background: #BFBFBF;
+  color: #111;
+  line-height: 1.6;
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ----------------- SIDEBAR ----------------- */
+.sidebar {
+  width: 220px;
+  background: #732F61;
+  color: #BFBFBF;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sidebar h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  margin-bottom: 1rem;
+}
+
+.sidebar ul li a {
+  color: #BFBFBF;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease, background 0.3s ease;
+  padding: 0.4rem 0.6rem;
+  display: block;
+  border-radius: 6px;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
+  background: #400101;
+  color: #fff;
+}
+
+/* ----------------- MAIN ----------------- */
+.admin-main {
+  flex: 1;
+  background: #fff;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.admin-main h1 {
+  color: #732F61;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.admin-main form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: #fdfdfd;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.admin-main form label {
+  font-weight: 600;
+  color: #262526;
+}
+
+.admin-main form input,
+.admin-main form textarea,
+.admin-main form select {
+  padding: 0.8rem;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.admin-main form input:focus,
+.admin-main form textarea:focus,
+.admin-main form select:focus {
+  border-color: #732F61;
+  box-shadow: 0 0 5px rgba(115,47,97,0.5);
+  outline: none;
+}
+
+.admin-main form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.admin-main form button {
+  background: #732F61;
+  color: #fff;
+  border: 2px solid white;
+  padding: 0.8rem 1rem;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.admin-main form button:hover {
+  background: #400101;
+  transform: scale(1.05);
+}
+
+/* Botón volver */
+.admin-main form button[type="button"] {
+  background: #BFBFBF;
+  color: #262526;
+  border: 2px solid #ccc;
+}
+
+.admin-main form button[type="button"]:hover {
+  background: #999;
+  color: #fff;
+}
+
+/* ----------------- RESPONSIVE ----------------- */
+@media (max-width: 900px) {
+  body {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 1rem;
+  }
+
+  .sidebar h2 {
+    display: none;
+  }
+
+  .admin-main {
+    padding: 2rem 1rem;
+  }
+
+  .admin-main form {
+    width: 100%;
+    padding: 1.5rem;
+  }
+}

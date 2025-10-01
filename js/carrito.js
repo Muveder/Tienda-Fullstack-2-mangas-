@@ -102,7 +102,6 @@ function mostrarCarrito() {
     totalElem.textContent = `$${total.toFixed(2)}`;
 }
 
-// Inicializar
 document.addEventListener("DOMContentLoaded", () => {
     mostrarCarrito();
     actualizarCartCount();
